@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Image Example</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        
+    /* Custom padding for different screen sizes */
+    .custom-padding {
+        padding-top: 30px;
+    }
+
+    /* Custom card width in rem */
+    .card {
+        width: 25rem; /* Default width */
+    }
+
+    @media (max-width: 576px) { /* Extra small devices (portrait phones) */
+        .custom-padding {
+            padding-top: 10px;
+        }
+        .card {
+            width: 10rem; /* Full width on extra small screens */
+        }
+    }
+
+    @media (min-width: 576px) and (max-width: 768px) { /* Small devices (landscape phones, tablets) */
+        .custom-padding {
+            padding-top: 30px;
+        }
+        .card {
+            width: 10rem; /* Slightly smaller width for small devices */
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 992px) { /* Medium devices (tablets, small laptops) */
+        .custom-padding {
+            padding-top: 40px;
+        }
+        .card {
+            width: 20rem; /* Medium size width */
+        }
+    }
+
+    @media (min-width: 992px) { /* Large devices (desktops) */
+        .custom-padding {
+            padding-top: 60px;
+        }
+        .card {
+            width: 25rem; /* Larger width for desktops */
+        }
+    }
+
+        .center-text {
+            text-align: center;
+        }
+        .content {
+            padding-left: 30px
+        }
+        .navbar-nav {
+            padding-right: 20px;
+            background-color: #F2F2F2;
+        }
+        .nav-item {
+            padding-right: 22px;
+        }
+        .navbar-nav .nav-item .nav-link:hover {
+            background-color: #F2F2F2; /* Hover color matches the website background */
+            color: #2980B9; /* Text color on hover */
+        }
+        body {
+            background-color:#F2F2F2; /* Website background color */
+            margin: 0; /* Remove default margin */
+            
+        }
+        .navbar {
+            background-color: #F2F2F2; /* Navbar background color */
+            margin: 0; /* Remove default margin */
+        }
+        .card img {
+            height: 200px; /* Set a fixed height for all images */
+            object-fit: cover; /* Ensures the image covers the area without distortion */
+        }
+        .card {
+            width: 18rem; /* Set a fixed width for all cards */
+            height: 350px; /* Set a fixed height for all cards */
+        }
+        .para-pad {
+            padding-left:300px;
+            padding-right:300px;
+            line-height: 1.6; 
+
+        }
+        /* For medium screens (tablets) and below */
+@media (max-width: 992px) {
+    .para-pad {
+        padding-left: 150px;
+        padding-right: 150px;
+    }
+}
+
+/* For small screens (mobile phones in landscape) */
+@media (max-width: 768px) {
+    .para-pad {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+/* For extra small screens (mobile phones in portrait) */
+@media (max-width: 576px) {
+    .para-pad {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+        form {
+            width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            border: none solid #ccc;
+            border-radius: 1px;
+            background-color: #F2F2F2;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            height:50px;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical; /* Allows vertical resizing */
+            height: 150px;
+        }
+
+        input[type="submit"] {
+            width: 100px;
+            height:50px;
+            padding: 10px;
+            background-color: #2980B9;
+            color: #F2F2F2;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+            
+
+        }
+
+        #home {
+            background-image: url('https://images.adsttc.com/media/images/64c9/c009/4b88/3f56/7def/e0a4/newsletter/color-in-hospitality-design-20-restaurant-interiors-that-set-the-right-tone_26.jpg?1690943503');
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white; /* Ensures text is visible */
+            padding: 100px 0; /* Adds padding to the top and bottom of the section */
+            height: 80vh; /* Ensures the section takes the full viewport height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+        }
+        
+        @media (max-width: 768px) {
+    #home {
+        background-attachment: scroll; /* Allows the background to scroll on tablets */
+        height: 70vh; /* Adjust height for tablets */
+        padding: 80px 0; /* Slightly reduced padding */
+    }
+}
+
+/* Mobile view */
+@media (max-width: 480px) {
+    #home {
+        background-attachment: scroll; /* Allows the background to scroll on mobile */
+        height: 60vh; /* Adjust height for mobile */
+        padding: 60px 0; /* Further reduced padding */
+    }
+}
+        .bouncing-text {
+            font-size: 2rem;
+            display: inline-block;
+            animation: bounce 1s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        .card {
+            transition: transform 0.3s ease-in-out; /* Smooth transition on hover and return */
+        }
+
+        .card:hover {
+            transform: translateY(-20px); /* Move up by 10px on hover */
+        }
+        .para-pad1 {
+    
+    font-size: 1.1rem; /* Adjust the font size for responsiveness */
+    line-height: 1.6; /* Ensure good readability on smaller screens */
+}
+
+/* Add media queries if you need specific styles for different screen sizes */
+@media (max-width: 768px) {
+    .para-pad1 {
+        font-size: 1rem;
+        
+    }
+}
+    </style>
+</head>
+<body style="font-family:Georgia" onload="alert('Page has fully loaded!')";>
+    <div class="container custom-padding">
+        <div class="row">
+            <div class="col-3 bouncing-text"><h1>Food Treats</h1></div>
+            <div class="col-4"></div>
+            <div class="col-5">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#menu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Menu
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#starter">Starters</a></li>
+                                        <li><a class="dropdown-item" href="#dessert">Deserts</a></li>
+                                        <li><a class="dropdown-item" href="#drink">Drinks</a></li>
+                                        <li><a class="dropdown-item" href="#main">Main Course</a></li>
+                                        <li><a class="dropdown-item" href="#soup">soups</a></li>
+                                        <li><a class="dropdown-item" href="#ice">Ice Creams</a></li>
+                                        
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#specials">Specials</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#about">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#contact">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <section id="home">
+    </section>
+    <section id="menu">
+        <div class="container">
+            <div class="row custom-padding ">
+                <h1 style="text-align: center;">Menu</h1>
+                <p  class= "custom-padding" style="text-align: center">Savoring each bite<br> you realize this is more than dining<br> It's a celebration of taste<br> A journey where every flavor tells a story<br>  every dish leaves a lasting impression.
+
+                </p>
+
+            </div>
+            </div>
+        </div>
+    </section>
+    <section id="starter">
+        <div class="container">
+            <div class="row custom-padding">
+                <h1 style="text-align: center">Starters</h1>
+            </div>
+            <div class="row custom-padding content">
+                <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                    <div class="card" style="width: 100%;">
+                        <a href="https://stock.adobe.com/search/images?k=veg+manchurian">
+                        <img src="D:\restaurentweb\resimages\vegmanchu.png" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body custom-padding">
+                          <p class="card-text"><h5> Name : Veg Manchuria <br> Cost:279/-</h5></p>
+                        </div>
+                     </div>
+                     </div>
+                     <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                        <div class="card" style="width: 100%;">
+                                <a href="https://stock.adobe.com/search/images?k=veg+momos">
+                                <img src="D:\restaurentweb\resimages\momos.jpg" class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body custom-padding">
+                                  <p class="card-text"><h5> Name :  Veg Momos <br> Cost:250/-</h5></p>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                                <div class="card" style="width: 100%;">
+                                <a href="https://stock.adobe.com/search/images?k=veg+rolls">
+                                <img src="D:\restaurentweb\resimages\dragonrolls.png" class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body custom-padding">
+                                  <p class="card-text"><h5> Name : Dragon Rolls<br> Cost:300/-</h5></p>
+                                </div>
+                      </div>
+                </div>
+           
+                <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                    <div class="card" style="width: 100%;">
+                        <a href="https://stock.adobe.com/search/images?k=veg+paneer&asset_id=829294881">
+                        <img src="D:\restaurentweb\resimages\afghanipaneer.png" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body custom-padding">
+                          <p class="card-text"><h5> Name : AfghaniPaneer<br> Cost:249/-</h5></p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                            <div class="card" style="width: 100%;">
+                                <a href="https://stock.adobe.com/search/images?k=veg+wontons&asset_id=829294881">
+                                <img src="D:\restaurentweb\resimages\steamed wontons.png"  class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body custom-padding">
+                                  <p class="card-text"><h5> Name : Steamed Wontons<br> Cost:289/-</h5</p>
+                                </div>
+                      </div>
+                            
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                            <div class="card" style="width: 100%;">
+                                <a href="https://www.shutterstock.com/search/veg-lollipop">
+                                <img src="D:\restaurentweb\resimages\vegloli.jpg" class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body custom-padding">
+                                  <p class="card-text"><h5> Name : Veg Lolipops<br> Cost:249/-</h5</p>
+                                </div>
+                      </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="container">
+            <div class="row custom-padding">
+                <h1 style="text-align: center">Non Veg</h1>
+            </div>
+            <div class="row custom-padding content">
+                <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                    <div class="card" style="width: 100%;">
+                        <a href="https://www.shutterstock.com/search/chicken-lollipop">
+                        <img src="D:\restaurentweb\resimages\chicken loli.jpg" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body custom-padding">
+                          <p class="card-text"><h5> Name : Chicken Lolipops <br> Cost:279/-</h5></p>
+                        </div>
+                     </div>
+                     </div>
+                     <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                        <div class="card" style="width: 100%;">
+                                <a href="https://www.shutterstock.com/search/garlic-butter-prawns">
+                                <img src="D:\restaurentweb\resimages\garlic2.jpg" class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body custom-padding">
+                                  <p class="card-text"><h5> Name :  Garlic  Butter Prawns <br> Cost:250/-</h5></p>
+                                </div>
+                      </div>
+                            
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                            <div class="card" style="width: 100%;">
+                                <a href="https://stock.adobe.com/search/images?k=mutton%20gosh">
+                                <img src="D:\restaurentweb\resimages\kandi.jpg" class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body custom-padding">
+                                  <p class="card-text"><h5> Name : Kandi Gosh<br> Cost:300/-</h5></p>
+                                </div>
+                      </div>
+                </div>
+               
+           
+                <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                    <div class="card" style="width: 100%;">
+                        <a href="https://www.shutterstock.com/search/dragon-chicken">
+                        <img src="D:\restaurentweb\resimages\droagon chicken.jpg" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body custom-padding">
+                          <p class="card-text"><h5> Name : Dragon Chicken<br> Cost:249/-</h5></p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                            <div class="card" style="width: 100%;">
+                                <a href="https://www.shutterstock.com/search/tandoori-crab">
+                                <img src="D:\restaurentweb\resimages\tandoori crab.jpg"  class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body custom-padding">
+                                  <p class="card-text"><h5> Name : Tandoori Crab<br> Cost:289/-</h5</p>
+                                </div>
+                      </div>
+                            
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                            <div class="card" style="width: 100%;">
+                                <a href="https://www.shutterstock.com/search/prawn-balls">
+                                <img src="D:\restaurentweb\resimages\prawn bolls.jpg" class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body custom-padding">
+                                  <p class="card-text"><h5> Name :Prawn Balls<br> Cost:249/-</h5</p>
+                                </div>
+                      </div>
+                     
+
+               
+                </div>
+            </div>
+
+
+    </section>
+
+       <section id="dessert">
+        <div class="container">
+            <div class="row custom-padding">
+                <h1 style="text-align: center">Desserts</h1>
+            </div>
+            <div class="row custom-padding content">
+                <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                    <div class="card " style="width: 100%">
+                        <a href="https://stock.adobe.com/search/images?filters%5Bcontent_type%3Aphoto%5D=1&filters%5Bcontent_type%3Aillustration%5D=1&filters%5Bcontent_type%3Azip_vector%5D=1&filters%5Bcontent_type%3Aimage%5D=1&order=relevance&price%5B%24%5D=1&safe_search=1&k=cheese+cake&search_page=1&search_type=usertyped&acp=&aco=cheese+cake&get_facets=0">
+                        <img src="D:\restaurentweb\resimages\cheesecake.jpg" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body custom-padding">
+                          <p class="card-text"><h5> Name : Cheese Cake <br> Cost:279/-</h5></p>
+                        </div>
+                    </div>
+                </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                            <div class="card " style="width: 100%">
+                                <a href="https://stock.adobe.com/search/images?k=apple pie">
+                                <img src="D:\restaurentweb\resimages\applepie.jpg" class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body custom-padding">
+                                  <p class="card-text"><h5> Name :Apple Pie<br> Cost:279/-</h5></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                            <div class="card " style="width: 100%">
+                                <a href="https://stock.adobe.com/search/images?filters%5Bcontent_type%3Aphoto%5D=1&filters%5Bcontent_type%3Aillustration%5D=1&filters%5Bcontent_type%3Azip_vector%5D=1&filters%5Bcontent_type%3Aimage%5D=1&order=relevance&price%5B%24%5D=1&safe_search=1&k=cheese+cake&search_page=1&search_type=usertyped&acp=&aco=cheese+cake&get_facets=0">
+                                <img src="D:\restaurentweb\resimages\mousse.jpg" class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body custom-padding">
+                                  <p class="card-text"><h5> Name :Mousse<br> Cost:279/-</h5></p>
+                                </div>
+                            </div>
+                        </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                                    <div class="card " style="width: 100%">
+                                        <a href="https://stock.adobe.com/search/images?k=macroons">
+                                        <img src="D:\restaurentweb\resimages\macroons.jpg" class="card-img-top" alt="...">
+                                        </a>
+                                        <div class="card-body custom-padding">
+                                          <p class="card-text"><h5> Name :Macroons <br> Cost:279/-</h5></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                        <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                                            <div class="card " style="width: 100%">
+                                                <a href="https://stock.adobe.com/search/images?k=Brownies">
+                                                <img src="D:\restaurentweb\resimages\Brownies.jpg" class="card-img-top" alt="...">
+                                                </a>
+                                                <div class="card-body custom-padding">
+                                                  <p class="card-text"><h5> Name :Brownies<br> Cost:279/-</h5></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                                            <div class="card " style="width: 100%">
+                                                <a href="https://stock.adobe.com/search/images?k=Pavlova">
+                                                <img src="D:\restaurentweb\resimages\Pavlova.jpg" class="card-img-top" alt="...">
+                                                </a>
+                                                <div class="card-body custom-padding">
+                                                  <p class="card-text"><h5> Name :Pavlova<br> Cost:279/-</h5></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            
+                            
+                        </div>
+       </section>
+       <section id="drink">
+        <div class="container">
+            <div class="row custom-padding">
+                <h1 style="text-align: center">Drinks</h1>
+            </div>
+            <div class="row custom-padding content">
+            <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                <div class="card" style="width: 100%;">
+                        <a href="https://stock.adobe.com/search/images?k=Virgin%20Mojito">
+                        <img src="D:\restaurentweb\resimages\Virgin Mojito.jpg" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body custom-padding">
+                          <p class="card-text"><h5> Name : Virgin Mojito <br> Cost:279/-</h5></p>
+                        </div>
+                    </div>
+                </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                            <div class="card" style="width: 100%;">
+                                <a href="https://stock.adobe.com/search/images?k=Mixed%20Berry%20Juice">
+                                <img src="D:\restaurentweb\resimages\Mixed Berry Juice.jpg" class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body custom-padding">
+                                  <p class="card-text"><h5> Name :Mixed Berry Juice<br> Cost:279/-</h5></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                            <div class="card" style="width: 100%;">
+                                <a href="https://stock.adobe.com/search/images?k=Chocolate%20Milkshake">
+                                <img src="D:\restaurentweb\resimages\choco.jpg" class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body custom-padding">
+                                  <p class="card-text"><h5> Name :Chocolate Milkshake<br> Cost:279/-</h5></p>
+                                </div>
+                            </div>
+                        </div>
+            
+                    
+                    
+                        <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                            <div class="card" style="width: 100%;">
+                                <a href="https://stock.adobe.com/search/images?k=Tropical Paradise%20Smoothie">
+                                <img src="D:\restaurentweb\resimages\Tropical Paradise Smoothie.jpg" class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body custom-padding">
+                                  <p class="card-text"><h5> Name : Tropical Paradise Smoothie <br> Cost:279/-</h5></p>
+                                </div>
+                            </div>
+                        </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                                    <div class="card" style="width: 100%;">
+                                        <a href="https://stock.adobe.com/search/images?k=Rose%20Lemonade">
+                                        <img src="D:\restaurentweb\resimages\Rose Lemonade.jpg" class="card-img-top" alt="...">
+                                        </a>
+                                        <div class="card-body custom-padding">
+                                          <p class="card-text"><h5> Name :Rose Lemonade<br> Cost:279/-</h5></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                                    <div class="card" style="width: 100%;">
+                                        <a href="https://stock.adobe.com/search/images?k=Chocolate%20Cappuccino">
+                                        <img src="D:\restaurentweb\resimages\Cappuccino.jpg" class="card-img-top" alt="...">
+                                        </a>
+                                        <div class="card-body custom-padding">
+                                          <p class="card-text"><h5> Name :Cappuccino<br> Cost:279/-</h5></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                  
+                    </div>
+       </section>
+       <section id="main">
+        <div class="container">
+            <div class="row custom-padding">
+                <h1 style="text-align: center">Main Course</h1>
+            </div>
+            <div class="row custom-padding content">
+                <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                    <div class="card" style="width: 100%;">
+                        <a href="https://stock.adobe.com/search/images?k=veg%20biryani">
+                        <img src="D:\restaurentweb\resimages\vegbir.jpg" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body custom-padding">
+                          <p class="card-text"><h5> Name : Veg Biryani  <br> Cost:279/-</h5></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                    <div class="card" style="width: 100%;">
+                                <a href="https://stock.adobe.com/search/images?k=hakkanoodles">
+                                <img src="D:\restaurentweb\resimages\hakkanoodles.jpg" class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body custom-padding">
+                                  <p class="card-text"><h5> Name :Hakka Noodles<br> Cost:279/-</h5></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                            <div class="card" style="width: 100%;">
+                                <a href="https://stock.adobe.com/search/images?k=Vegetable%20Lasagna">
+                                <img src="D:\restaurentweb\resimages\VegetableLasagna.jpg" class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body custom-padding">
+                                  <p class="card-text"><h5> Name :Vegetable Lasagna<br> Cost:279/-</h5></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                            <div class="card" style="width: 100%;">
+                                <a href="https://stock.adobe.com/search/images?k=Pasta%20Dishes%20non%20veg">
+                                <img src="D:\restaurentweb\resimages\Paneer Tikka Masala.jpg" class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body custom-padding">
+                                  <p class="card-text"><h5> Name : Paneer Tikka Masala<br> Cost:279/-</h5></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                            <div class="card" style="width: 100%;">
+                                        <a href="https://stock.adobe.com/search/images?k=Tandoori%20Broccoli">
+                                        <img src="D:\restaurentweb\resimages\Tandoori Broccoli.jpg" class="card-img-top" alt="...">
+                                        </a>
+                                        <div class="card-body custom-padding">
+                                          <p class="card-text"><h5> Name : Tandoori Broccoli<br> Cost:279/-</h5></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                                    <div class="card" style="width: 100%;">
+                                        <a href="https://stock.adobe.com/search/images?k=Grilled%20Vegetable%20Platter">
+                                        <img src="D:\restaurentweb\resimages\Grilled Vegetable Platter.jpg" class="card-img-top" alt="...">
+                                        </a>
+                                        <div class="card-body custom-padding">
+                                          <p class="card-text"><h5> Name :Grilled Vegetable Platter <br> Cost:279/-</h5></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                  
+            </div>
+            <div class="container">
+                <div class="row custom-padding">
+                    <h1 style="text-align: center">Non Veg</h1>
+                </div>
+                <div class="row custom-padding content">
+                    <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                        <div class="card" style="width: 100%;">
+                            <a href="https://stock.adobe.com/search/images?k=non+veg+biryani">
+                            <img src="D:\restaurentweb\resimages\Dum Handi chicken Biryani.jpg" class="card-img-top" alt="...">
+                            </a>
+                            <div class="card-body custom-padding">
+                              <p class="card-text"><h5> Name : Dum Handi chicken Biryani  <br> Cost:279/-</h5></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                        <div class="card" style="width: 100%;">
+                                    <a href="https://stock.adobe.com/search/images?k=non+veg+noodles">
+                                    <img src="D:\restaurentweb\resimages\Fried Flat rice noodles.jpg" class="card-img-top" alt="...">
+                                    </a>
+                                    <div class="card-body custom-padding">
+                                      <p class="card-text"><h5> Name :Fried Flat rice noodles<br> Cost:279/-</h5></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                                <div class="card" style="width: 100%;">
+                                    <a href="https://stock.adobe.com/search/images?k=Chocolate%20Milkshake">
+                                    <img src="D:\restaurentweb\resimages\chicken curry with nons.jpg" class="card-img-top" alt="...">
+                                    </a>
+                                    <div class="card-body custom-padding">
+                                      <p class="card-text"><h5> Name :chicken curry with nons<br> Cost:279/-</h5></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                                <div class="card" style="width: 100%;">
+                                    <a href="https://stock.adobe.com/search/images?k=Pasta%20Dishes%20non%20veg">
+                                    <img src="D:\restaurentweb\resimages\Shrimp Scampi with Spaghetti.jpg" class="card-img-top" alt="...">
+                                    </a>
+                                    <div class="card-body custom-padding">
+                                      <p class="card-text"><h5> Name : Shrimp Scampi with Spaghetti<br> Cost:279/-</h5></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                                <div class="card" style="width: 100%;">
+                                            <a href="https://stock.adobe.com/search/images?k=Pasta%20Dishes%20non%20veg">
+                                            <img src="D:\restaurentweb\resimages\braised meat rice.jpg" class="card-img-top" alt="...">
+                                            </a>
+                                            <div class="card-body custom-padding">
+                                              <p class="card-text"><h5> Name :Braised meat rice<br> Cost:279/-</h5></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                                        <div class="card" style="width: 100%;">
+                                            <a href="https://stock.adobe.com/search/images?k=Chocolate%20Cappuccino">
+                                            <img src="D:\restaurentweb\resimages\roasted chicken.jpg" class="card-img-top" alt="...">
+                                            </a>
+                                            <div class="card-body custom-padding">
+                                              <p class="card-text"><h5> Name :Roasted chicken  <br> Cost:279/-</h5></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                      
+                </div>
+       </section>
+       <section id="soup">
+        <div class="container">
+            <div class="row custom-padding">
+                <h1 style="text-align: center">Soups</h1>
+            </div>
+            <div class="row custom-padding content">
+                <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                    <div class="card" style="width: 100%;">
+                        <a href="https://stock.adobe.com/search/images?k=Sweet%20Corn%20Soup">
+                        <img src="D:\restaurentweb\resimages\Sweet Corn Soup1.jpg" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body custom-padding">
+                          <p class="card-text"><h5> Name : Sweet Corn Soup  <br> Cost:279/-</h5></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                    <div class="card" style="width: 100%;">
+                                <a href="https://stock.adobe.com/search/images?k=Tomato%20Basil%20Soup">
+                                <img src="D:\restaurentweb\resimages\Tomato Basil Soup.jpg" class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body custom-padding">
+                                  <p class="card-text"><h5> Name :Tomato Basil Soup<br> Cost:279/-</h5></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                            <div class="card" style="width: 100%;">
+                                <a href="https://stock.adobe.com/search/images?k=Minestrone">
+                                <img src="D:\restaurentweb\resimages\Minestrone.jpg" class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body custom-padding">
+                                  <p class="card-text"><h5> Name :Minestrone<br> Cost:279/-</h5></p>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    
+                    
+                        <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                            <div class="card" style="width: 100%;">
+                                <a href="https://stock.adobe.com/search/images?k=Asparagus%20Soup">
+                                <img src="D:\restaurentweb\resimages\Asparagus Soup.jpg" class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body custom-padding">
+                                  <p class="card-text"><h5> Name : Asparagus Soup<br> Cost:279/-</h5></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                            <div class="card" style="width: 100%;">
+                                        <a href="https://stock.adobe.com/search/images?k=French%20Onion%20Soup">
+                                        <img src="D:\restaurentweb\resimages\French Onion Soup.jpg" class="card-img-top" alt="...">
+                                        </a>
+                                        <div class="card-body custom-padding">
+                                          <p class="card-text"><h5> Name : French Onion Soup <br> Cost:279/-</h5></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                                    <div class="card" style="width: 100%;">
+                                        <a href="https://stock.adobe.com/search/images?k=Vegetable%20Clear%20Soup">
+                                        <img src="D:\restaurentweb\resimages\Vegetable Clear Soup.jpg" class="card-img-top" alt="...">
+                                        </a>
+                                        <div class="card-body custom-padding">
+                                          <p class="card-text"><h5> Name :Vegetable Clear Soup<br> Cost:279/-</h5></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                  
+            </div>
+            <div class="container">
+                <div class="row custom-padding">
+                    <h1 style="text-align: center">Non Veg</h1>
+                </div>
+                <div class="row custom-padding content">
+                    <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                        <div class="card" style="width: 100%;">
+                            <a href="https://stock.adobe.com/search/images?k=Chicken%20Consommé">
+                            <img src="D:\restaurentweb\resimages\Chicken Consommé.jpg" class="card-img-top" alt="...">
+                            </a>
+                            <div class="card-body custom-padding">
+                              <p class="card-text"><h5> Name : Chicken Consommé<br> Cost:279/-</h5></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                        <div class="card" style="width: 100%;">
+                                    <a href="https://stock.adobe.com/search/images?k=Spicy%20Crab%20Soup">
+                                    <img src="D:\restaurentweb\resimages\Spicy Crab Soup.jpg" class="card-img-top" alt="...">
+                                    </a>
+                                    <div class="card-body custom-padding">
+                                      <p class="card-text"><h5> Name :Spicy Crab Soup<br> Cost:279/-</h5></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                                <div class="card" style="width: 100%;">
+                                    <a href="https://stock.adobe.com/search/images?k=Bouillabaisse">
+                                    <img src="D:\restaurentweb\resimages\Bouillabaisse.jpg" class="card-img-top" alt="...">
+                                    </a>
+                                    <div class="card-body custom-padding">
+                                      <p class="card-text"><h5> Name : Bouillabaisse<br> Cost:279/-</h5></p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                                <div class="card" style="width: 100%;">
+                                    <a href="https://stock.adobe.com/search/images?k=Chicken%20and%20Sweet%20Corn%20Soup">
+                                    <img src="D:\restaurentweb\resimages\Tom Yum Goong.jpg" class="card-img-top" alt="...">
+                                    </a>
+                                    <div class="card-body custom-padding">
+                                      <p class="card-text"><h5> Name : Tom Yum Goong<br> Cost:279/-</h5></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                                <div class="card" style="width: 100%;">
+                                            <a href="https://stock.adobe.com/search/images?k=Chicken%20and%20Sweet%20Corn%20Soup">
+                                            <img src="D:\restaurentweb\resimages\Chicken and Sweet Corn Soup.jpg" class="card-img-top" alt="...">
+                                            </a>
+                                            <div class="card-body custom-padding">
+                                              <p class="card-text"><h5> Name :Chicken and Sweet Corn Soup<br> Cost:279/-</h5></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                                        <div class="card" style="width: 100%;">
+                                            <a href="https://stock.adobe.com/search/images?k=Mulligatawny%20Soup">
+                                            <img src="D:\restaurentweb\resimages\Mulligatawny Soup.jpg" class="card-img-top" alt="...">
+                                            </a>
+                                            <div class="card-body custom-padding">
+                                              <p class="card-text"><h5> Name :Mulligatawny Soup  <br> Cost:279/-</h5></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                      
+                </div>
+       </section>
+       <section id="ice">
+        <div class="container">
+            <div class="row custom-padding">
+                <h1 style="text-align: center">Ice Creams</h1>
+            </div>
+            <div class="row custom-padding content">
+                <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                    <div class="card" style="width: 100%;">
+                        <a href="https://stock.adobe.com/search/images?k=Bacon%20Ice%20Cream">
+                        <img src="D:\restaurentweb\resimages\Bacon Ice Cream.jpg" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body custom-padding">
+                          <p class="card-text"><h5> Name : Bacon Ice Cream <br> Cost:279/-</h5></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                    <div class="card" style="width: 100%;">
+                                <a href="https://stock.adobe.com/search/images?k=Saffron%20and%20Pistachio%20Ice%20Cream">
+                                <img src="D:\restaurentweb\resimages\Saffron and Pistachio Ice Cream.jpg" class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body custom-padding">
+                                  <p class="card-text"><h5> Name :Saffron and Pistachio Ice Cream<br> Cost:279/-</h5></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                            <div class="card" style="width: 100%;">
+                                <a href="https://stock.adobe.com/search/images?k=Chocolate%20Milkshake">
+                                <img src="D:\restaurentweb\resimages\Blue Cheese Ice Cream.jpg" class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body custom-padding">
+                                  <p class="card-text"><h5> Name : Blue Cheese Ice Cream<br> Cost:279/-</h5></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                            <div class="card" style="width: 100%;">
+                                <a href="https://stock.adobe.com/search/images?k=Rose%20and%20Lychee%20Ice%20Cream">
+                                <img src="D:\restaurentweb\resimages\Rose and Lychee Ice Cream.jpg" class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body custom-padding">
+                                  <p class="card-text"><h5> Name : Rose and Lychee Ice Cream<br> Cost:279/-</h5></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                            <div class="card" style="width: 100%;">
+                                        <a href="https://stock.adobe.com/search/images?k=Salted%20Caramel%20Ice%20Cream">
+                                        <img src="D:\restaurentweb\resimages\caramel.jpg" class="card-img-top" alt="...">
+                                        </a>
+                                        <div class="card-body custom-padding">
+                                          <p class="card-text"><h5> Name :Salted Caramel Ice Cream<br> Cost:279/-</h5></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                                    <div class="card" style="width: 100%;">
+                                        <a href="https://stock.adobe.com/search/images?k=Black%20Sesame%20Ice%20Cream">
+                                        <img src="D:\restaurentweb\resimages\Black Sesame Ice Cream.jpg" class="card-img-top" alt="...">
+                                        </a>
+                                        <div class="card-body custom-padding">
+                                          <p class="card-text"><h5> Name :Black Sesame Ice Cream<br> Cost:279/-</h5></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                  
+            </div>
+       </section>
+       <section id="specials">
+        <div class="container">
+            <div class="row custom-padding">
+                <h1 style="text-align: center">Specials</h1>
+            </div>
+            <div class="row custom-padding content">
+                <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                    <div class="card" style="width: 100%;">
+                        <a href="https://stock.adobe.com/search/images?k=Stuffed%20Morel%20Mushrooms">
+                        <img src="D:\restaurentweb\resimages\Stuffed Morel Mushrooms.jpg" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body custom-padding">
+                          <p class="card-text"><h5> Name : Stuffed Morel Mushrooms<br> Cost:279/-</h5></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                    <div class="card" style="width: 100%;">
+                                <a href="https://stock.adobe.com/search/images?k=Foie%20Gras%20Torchon:">
+                                <img src="D:\restaurentweb\resimages\Foie Gras Torchon.jpg" class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body custom-padding">
+                                  <p class="card-text"><h5> Name :Foie Gras Torchon<br> Cost:279/-</h5></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                            <div class="card" style="width: 100%;">
+                                <a href="#">
+                                <img src="D:\restaurentweb\resimages\mandi2.jpg" class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body custom-padding">
+                                  <p class="card-text"><h5> Name : Full Mandi Platter<br> Cost:279/-</h5></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                            <div class="card" style="width: 100%;">
+                                <a href="https://stock.adobe.com/search/images?k=Rose%20and%20Lychee%20Ice%20Cream">
+                                <img src="D:\restaurentweb\resimages\shawarma.jpg" class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body custom-padding">
+                                  <p class="card-text"><h5> Name : Chicken  Shawarma<br> Cost:279/-</h5></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                            <div class="card" style="width: 100%;">
+                                        <a href="https://stock.adobe.com/search/images?k=Salted%20Caramel%20Ice%20Cream">
+                                        <img src="D:\restaurentweb\resimages\sizzling.jpg" class="card-img-top" alt="...">
+                                        </a>
+                                        <div class="card-body custom-padding">
+                                          <p class="card-text"><h5> Name :Sizzling Brownie<br> Cost:279/-</h5></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12 custom-padding">
+                                    <div class="card" style="width: 100%;">
+                                        <a href="#">
+                                        <img src="D:\restaurentweb\resimages\saffron.jpg" class="card-img-top" alt="...">
+                                        </a>
+                                        <div class="card-body custom-padding">
+                                          <p class="card-text"><h5> Name :Saffron Sharabath<br> Cost:279/-</h5></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                  
+            </div>
+       </section>
+       <section id="about" class="custom-padding center-text ">
+<h1>About</h1>
+<h6 class="custom-padding">Welcome to Food Treats – where every bite is a celebration of flavor!</h6>
+<p class="center-text para-pad para-pad1">
+    Here culinary dreams come to life and every dish tells a story. Our restaurant is a haven for those who cherish the art of food, where tradition meets innovation on every plate. 
+    From our humble beginnings, we've grown into a beloved spot, known for our passion for creating delightful experiences. At Food Treats, we believe that great food has the power to bring people together, and this belief is at the heart of everything we do. Our menu is a celebration of fresh, locally-sourced ingredients, thoughtfully prepared to excite your taste buds and nourish your soul. 
+    Whether you're here for a casual meal or a special occasion, you'll find that our warm atmosphere, exceptional service, and dedication to quality make every visit memorable. We take pride in our partnerships with local farmers and suppliers, ensuring that every dish reflects our commitment to sustainability and community. 
+    Join us at Food Treats, where every meal is crafted with care, every bite is a treat, and every guest is family. We look forward to serving you and making your dining experience one that you'll cherish.
+</p>
+       </section>
+       <section id="contact" class="container">
+        <h1 class="custom-padding center-text">Contact Us</h1>
+        <form action="/submit_form" method="post">
+            <div class="col-md-12 col-6 mb-3">
+            <label for="name" class="form-label">Your Name:</label>
+            <input type="text" id="name" name="name" class="form-control"  onfocus="this.style.backgroundColor='#f0f8ff'; this.style.borderColor='#00796b';"
+            onblur="this.style.backgroundColor='#FFFFFF'; this.style.borderColor='';" required>
+    </div>
+    <div class="col-md-12 col-6 mb-3">
+            <label for="email" class="form-label">Your Email:</label>
+            <input type="email" id="email" name="email" class="form-control"   onfocus="this.style.backgroundColor='#f0f8ff'; this.style.borderColor='#00796b';"
+            onblur="this.style.backgroundColor='#FFFFFF'; this.style.borderColor='';" required>
+    </div>
+    <div class="col-md-12 col-6 mb-3">
+            <label for="subject" class="form-label">Subject:</label>
+            <input type="text" id="subject" name="subject" class="form-control"  onfocus="this.style.backgroundColor='#f0f8ff'; this.style.borderColor='';"  onblur="this.style.backgroundColor='#FFFFFF'; this.style.borderColor='';" required>
+    </div>
+    <div class="col-md-12 col-6 mb-3">
+            <label for="message" class="form-label">Your Message:</label>
+            <textarea id="message" name="message" class="form-control"  onfocus="this.style.backgroundColor='#f0f8ff'; this.style.borderColor='#00796b';"
+            onblur="this.style.backgroundColor='#FFFFFf'; this.style.borderColor='';" required></textarea>
+    </div>
+            <div class="mb-3 text-center">
+            <input type="submit" value="Submit">
+            </div>
+        </form>
+       </section>
+    </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
